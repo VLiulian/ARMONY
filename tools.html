@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="OrbitHand — Bibliothèque d’outils modulaires imprimables (STL). Embouts interchangeables pour maintenance orbitale." />
+  <title>OrbitHand — Embouts 3D</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" href="images/brand/logo.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" data-enhance="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="OrbitHand — Accueil">
+        <span class="brand-mark" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Logo OrbitHand">
+            <title>OrbitHand logo</title>
+
+            <!-- Tout le logo suit currentColor (facile à recolorer en CSS) -->
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- ORBIT RING (anneau) : un grand arc épais + un highlight plus fin -->
+                <path d="M160 520
+                        C 260 650, 520 710, 760 650
+                        C 980 595, 1080 450, 1030 320
+                        C 980 200, 760 145, 520 180
+                        C 320 210, 205 320, 160 420"
+                    stroke-width="38"/>
+
+                <!-- highlight interne de l’anneau -->
+                <path d="M230 520
+                        C 320 610, 520 660, 740 610
+                        C 930 565, 1010 455, 980 350
+                        C 945 245, 760 205, 540 230
+                        C 360 250, 270 330, 240 400"
+                    stroke-width="10" opacity="0.85"/>
+
+                <!-- Orbital dot -->
+                <circle cx="860" cy="220" r="34" fill="currentColor" stroke="none"/>
+
+                <!-- ROBOT HEAD (capsule) -->
+                <rect x="430" y="285" width="340" height="170" rx="85" ry="85"
+                    stroke-width="28"/>
+                <!-- inner face cut -->
+                <rect x="468" y="320" width="264" height="100" rx="50" ry="50"
+                    stroke-width="0" fill="currentColor" opacity="0.0"/>
+
+                <!-- eyes -->
+                <circle cx="520" cy="370" r="28" fill="currentColor" stroke="none"/>
+                <circle cx="680" cy="370" r="28" fill="currentColor" stroke="none"/>
+
+                <!-- CHEST / BODY (forme bouclier arrondie) -->
+                <path d="M520 452
+                        C 520 540, 545 610, 600 635
+                        C 655 610, 680 540, 680 452
+                        C 680 452, 640 430, 600 430
+                        C 560 430, 520 452, 520 452 Z"
+                    fill="currentColor" stroke="none"/>
+
+                <!-- shoulders (2 petites coques latérales) -->
+                <path d="M450 452
+                        C 430 470, 420 500, 420 528
+                        C 460 520, 495 505, 520 485
+                        C 505 462, 480 445, 450 452 Z"
+                    fill="currentColor" stroke="none"/>
+                <path d="M750 452
+                        C 770 470, 780 500, 780 528
+                        C 740 520, 705 505, 680 485
+                        C 695 462, 720 445, 750 452 Z"
+                    fill="currentColor" stroke="none"/>
+
+                <!-- ========== ARMS ========== -->
+
+                <!-- Helper: functionally we draw each arm with thick strokes + small joint circles -->
+
+                <!-- LEFT ARM (grande) -->
+                <path d="M410 470
+                        C 360 460, 310 490, 285 540
+                        C 265 580, 270 625, 300 655"
+                    stroke-width="20"/>
+                <path d="M300 655
+                        C 335 690, 380 705, 420 690"
+                    stroke-width="20"/>
+
+                <!-- joints left -->
+                <circle cx="350" cy="500" r="20" fill="currentColor" stroke="none"/>
+                <circle cx="300" cy="655" r="18" fill="currentColor" stroke="none"/>
+
+                <!-- Left claw -->
+                <g transform="translate(430 690)">
+                <circle cx="-35" cy="0" r="16" fill="currentColor" stroke="none"/>
+                <path d="M-55 -5 C-80 -18, -95 -10, -100 10" stroke-width="14"/>
+                <path d="M-55 5  C-80 18,  -95 10, -100 -10" stroke-width="14"/>
+                </g>
+
+                <!-- CENTER ARM (petit, sous l’orbite) -->
+                <path d="M600 455
+                        C 600 520, 585 575, 560 615"
+                    stroke-width="18"/>
+                <circle cx="585" cy="560" r="16" fill="currentColor" stroke="none"/>
+
+                <!-- center claw -->
+                <g transform="translate(545 635)">
+                <circle cx="-10" cy="0" r="14" fill="currentColor" stroke="none"/>
+                <path d="M-20 -6 C-40 -18, -55 -10, -60 10" stroke-width="12"/>
+                <path d="M-20  6 C-40 18,  -55 10, -60 -10" stroke-width="12"/>
+                </g>
+
+                <!-- RIGHT ARM (grande) -->
+                <path d="M790 470
+                        C 840 460, 890 490, 915 540
+                        C 935 580, 930 625, 900 655"
+                    stroke-width="20"/>
+                <path d="M900 655
+                        C 865 690, 820 705, 780 690"
+                    stroke-width="20"/>
+
+                <!-- joints right -->
+                <circle cx="850" cy="500" r="20" fill="currentColor" stroke="none"/>
+                <circle cx="900" cy="655" r="18" fill="currentColor" stroke="none"/>
+
+                <!-- right claw -->
+                <g transform="translate(770 690)">
+                <circle cx="35" cy="0" r="16" fill="currentColor" stroke="none"/>
+                <path d="M55 -5 C80 -18, 95 -10, 100 10" stroke-width="14"/>
+                <path d="M55  5 C80 18,  95 10, 100 -10" stroke-width="14"/>
+                </g>
+
+            </g>
+            </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">OrbitHand</span>
+          <span class="brand-tag">Embouts 3D</span>
+        </span>
+      </a>
+
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+      <label class="hamburger" for="nav-toggle">
+        <span class="sr-only">Ouvrir/fermer le menu</span>
+        <span aria-hidden="true" class="hamburger-lines"></span>
+      </label>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="product.html">Produit</a></li>
+          <li><a href="tools.html" aria-current="page">Embouts</a></li>
+          <li><a href="index.html#investir">Investir</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="index.html#interet">Manifester votre intérêt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero-compact" aria-label="Bibliothèque d'embouts 3D">
+      <div class="container hero-inner">
+        <p class="eyebrow reveal">OrbitHand • Outils modulaires</p>
+        <h1 class="hero-title reveal">Bibliothèque d’outils modulaires imprimables</h1>
+        <p class="hero-subtitle reveal">
+          Un système d’embouts interchangeables, pensé pour être <strong>imprimé directement en station</strong> via une imprimante 3D spatiale,
+          puis monté sur le bras interactif.
+        </p>
+
+        <div class="callout reveal">
+          <p class="callout-title">Objectif : réduire le “temps d’attente outil”.</p>
+          <p class="callout-text">Quand un embout casse, on le réimprime. Quand une mission change, on adapte l’outil.</p>
+          <a class="btn btn-ghost" href="product.html#features">Voir les caractéristiques</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Catalogue (prototype)</h2>
+          <p>
+            Les fichiers STL ne sont pas disponibles publiquement pour l’instant.
+            Les boutons sont présents pour préparer l’intégration d’un espace “download” (auth + tracking) plus tard.
+          </p>
+        </header>
+
+        <div class="tool-grid reveal">
+          <!-- 12 cartes -->
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧰</div>
+              <span class="badge badge-ok">Disponible</span>
+            </div>
+            <h3>OmniDriver Hex+</h3>
+            <p>Tournevis multifonction (hex/torx) pour panneaux et accès rapides.</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🗜️</div>
+              <span class="badge badge-ok">Disponible</span>
+            </div>
+            <h3>MicroGrip Pincer</h3>
+            <p>Pince de précision anti-glisse pour connecteurs, câbles et petits éléments.</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧹</div>
+              <span class="badge badge-ok">Disponible</span>
+            </div>
+            <h3>OptiBrush Nano</h3>
+            <p>Brosse douce pour nettoyage d’optiques, capteurs et hublots.</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">📷</div>
+              <span class="badge badge-ok">Disponible</span>
+            </div>
+            <h3>HullScope Cam</h3>
+            <p>Caméra d’inspection orientable avec éclairage intégré (module).</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧪</div>
+              <span class="badge badge-warn">En développement</span>
+            </div>
+            <h3>ThermaScan IR</h3>
+            <p>Capteur thermique pour détecter hotspots, pertes d’isolation et gradients anormaux.</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🛠️</div>
+              <span class="badge badge-ok">Disponible</span>
+            </div>
+            <h3>TorqueKey TX</h3>
+            <p>Clé dynamométrique compacte pour fixations critiques (mesure couple/log).</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧲</div>
+              <span class="badge badge-warn">En développement</span>
+            </div>
+            <h3>CargoHook Latch</h3>
+            <p>Crochet de manipulation pour poignées, verrous simples et accessoires externes.</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧴</div>
+              <span class="badge badge-warn">En développement</span>
+            </div>
+            <h3>Sealant Injector</h3>
+            <p>Injection de mastic/résine pour micro-fuites (concept, protocoles à définir).</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧱</div>
+              <span class="badge badge-warn">En développement</span>
+            </div>
+            <h3>SolarPatch Kit</h3>
+            <p>Application de patch/film pour surfaces (maintenance préventive sur zones ciblées).</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧽</div>
+              <span class="badge badge-ok">Disponible</span>
+            </div>
+            <h3>DebrisSwipe Edge</h3>
+            <p>Raclette/balayage pour poussières, dépôts et contamination de surface.</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧿</div>
+              <span class="badge badge-ok">Disponible</span>
+            </div>
+            <h3>AnchorProbe</h3>
+            <p>Sonde d’alignement pour contrôle d’ancrage et vérification d’interface avant action.</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+
+          <article class="tool card">
+            <div class="tool-top">
+              <div class="tool-icon" aria-hidden="true">🧨</div>
+              <span class="badge badge-warn">En développement</span>
+            </div>
+            <h3>LaserWeld Spot</h3>
+            <p>Module “concept” de soudure/traitement localisé (sécurité & certification à cadrer).</p>
+            <button class="btn btn-secondary" type="button" disabled aria-disabled="true">Télécharger le fichier STL</button>
+          </article>
+        </div>
+
+        <p class="small muted reveal">
+          Mention : imprimables directement sur la station avec imprimante 3D spatiale (selon matériaux compatibles et procédures opérateur).
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="callout reveal">
+          <p class="callout-title">Vous voulez co-définir la bibliothèque ?</p>
+          <p class="callout-text">Envoyez vos besoins (interfaces, standard tool-changer, contraintes matériaux, procédures).</p>
+          <a class="btn btn-primary" href="index.html#interet">Manifester votre intérêt</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="legal">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Informations légales</h2>
+          <p>Mentions légales, confidentialité, CGV (précommandes à venir).</p>
+        </header>
+
+        <div class="grid grid-3 reveal">
+          <article class="card" id="mentions-legales">
+            <h3>Mentions légales</h3>
+            <p class="small">Éditeur : OrbitHand (nom temporaire) • Adresse : à compléter • Hébergeur : à compléter.</p>
+          </article>
+          <article class="card" id="confidentialite">
+            <h3>Confidentialité</h3>
+            <p class="small">Données limitées au suivi du projet. Pas de revente. Désinscription simple.</p>
+          </article>
+          <article class="card" id="cgv">
+            <h3>CGV</h3>
+            <p class="small">Aucune vente active. Les conditions seront publiées avant ouverture des précommandes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-title">OrbitHand</p>
+        <p class="small muted">Bibliothèque d’embouts — conçue pour évoluer.</p>
+      </div>
+
+      <div class="footer-links" aria-label="Liens">
+        <a href="index.html">Accueil</a>
+        <a href="product.html">Produit</a>
+        <a href="tools.html">Embouts</a>
+        <a href="index.html#investir">Investir</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div class="footer-newsletter">
+        <p class="footer-title">Suivre l’avancement</p>
+        <form class="newsletter" action="#" method="post">
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input id="newsletter-email" name="newsletter_email" type="email" placeholder="Email" autocomplete="email" required />
+          <button class="btn btn-primary" type="submit">S’inscrire</button>
+        </form>
+        <p class="small muted">Une mise à jour par mois.</p>
+      </div>
+
+      <div class="footer-social" aria-label="Réseaux sociaux">
+        <a href="#" aria-label="LinkedIn (à renseigner)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 8.5V19.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6.5 5.5h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M10 19.5v-6.2c0-2.6 3.8-2.8 3.8 0v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M13.8 13.3c0-2.7 4.2-3.1 4.2.3v5.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="X (Twitter) (à renseigner)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 18L18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8.2 6H18v9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube (à renseigner)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10 9.5l6 2.5-6 2.5v-5Z" fill="currentColor"/>
+            <path d="M21 12c0 6-1 7-9 7S3 18 3 12s1-7 9-7 9 1 9 7Z" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="small muted">© 2026 OrbitHand — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

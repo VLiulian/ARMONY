@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="OrbitHand — Robot autonome à 3 bras pour la maintenance des stations spatiales. Réactivité immédiate, sécurité accrue, disponibilité 24/7." />
+  <title>OrbitHand — Révolutionner la maintenance spatiale</title>
+
+  <meta property="og:title" content="OrbitHand — Révolutionner la maintenance spatiale" />
+  <meta property="og:description" content="Robot autonome à 3 bras pour inspection, réparation et nettoyage. Réactivité immédiate, sécurité accrue, disponibilité 24/7." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://placehold.co/1200x630/png?text=OrbitHand" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <link rel="icon" href="images/brand/logo.svg" type="image/svg+xml">
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" data-enhance="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="OrbitHand — Accueil">
+        <span class="brand-mark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Logo OrbitHand">
+            <title>OrbitHand logo</title>
+
+            <!-- Tout le logo suit currentColor (facile à recolorer en CSS) -->
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+
+                <!-- ORBIT RING (anneau) : un grand arc épais + un highlight plus fin -->
+                <path d="M160 520
+                        C 260 650, 520 710, 760 650
+                        C 980 595, 1080 450, 1030 320
+                        C 980 200, 760 145, 520 180
+                        C 320 210, 205 320, 160 420"
+                    stroke-width="38"/>
+
+                <!-- highlight interne de l’anneau -->
+                <path d="M230 520
+                        C 320 610, 520 660, 740 610
+                        C 930 565, 1010 455, 980 350
+                        C 945 245, 760 205, 540 230
+                        C 360 250, 270 330, 240 400"
+                    stroke-width="10" opacity="0.85"/>
+
+                <!-- Orbital dot -->
+                <circle cx="860" cy="220" r="34" fill="currentColor" stroke="none"/>
+
+                <!-- ROBOT HEAD (capsule) -->
+                <rect x="430" y="285" width="340" height="170" rx="85" ry="85"
+                    stroke-width="28"/>
+                <!-- inner face cut -->
+                <rect x="468" y="320" width="264" height="100" rx="50" ry="50"
+                    stroke-width="0" fill="currentColor" opacity="0.0"/>
+
+                <!-- eyes -->
+                <circle cx="520" cy="370" r="28" fill="currentColor" stroke="none"/>
+                <circle cx="680" cy="370" r="28" fill="currentColor" stroke="none"/>
+
+                <!-- CHEST / BODY (forme bouclier arrondie) -->
+                <path d="M520 452
+                        C 520 540, 545 610, 600 635
+                        C 655 610, 680 540, 680 452
+                        C 680 452, 640 430, 600 430
+                        C 560 430, 520 452, 520 452 Z"
+                    fill="currentColor" stroke="none"/>
+
+                <!-- shoulders (2 petites coques latérales) -->
+                <path d="M450 452
+                        C 430 470, 420 500, 420 528
+                        C 460 520, 495 505, 520 485
+                        C 505 462, 480 445, 450 452 Z"
+                    fill="currentColor" stroke="none"/>
+                <path d="M750 452
+                        C 770 470, 780 500, 780 528
+                        C 740 520, 705 505, 680 485
+                        C 695 462, 720 445, 750 452 Z"
+                    fill="currentColor" stroke="none"/>
+
+                <!-- ========== ARMS ========== -->
+
+                <!-- Helper: functionally we draw each arm with thick strokes + small joint circles -->
+
+                <!-- LEFT ARM (grande) -->
+                <path d="M410 470
+                        C 360 460, 310 490, 285 540
+                        C 265 580, 270 625, 300 655"
+                    stroke-width="20"/>
+                <path d="M300 655
+                        C 335 690, 380 705, 420 690"
+                    stroke-width="20"/>
+
+                <!-- joints left -->
+                <circle cx="350" cy="500" r="20" fill="currentColor" stroke="none"/>
+                <circle cx="300" cy="655" r="18" fill="currentColor" stroke="none"/>
+
+                <!-- Left claw -->
+                <g transform="translate(430 690)">
+                <circle cx="-35" cy="0" r="16" fill="currentColor" stroke="none"/>
+                <path d="M-55 -5 C-80 -18, -95 -10, -100 10" stroke-width="14"/>
+                <path d="M-55 5  C-80 18,  -95 10, -100 -10" stroke-width="14"/>
+                </g>
+
+                <!-- CENTER ARM (petit, sous l’orbite) -->
+                <path d="M600 455
+                        C 600 520, 585 575, 560 615"
+                    stroke-width="18"/>
+                <circle cx="585" cy="560" r="16" fill="currentColor" stroke="none"/>
+
+                <!-- center claw -->
+                <g transform="translate(545 635)">
+                <circle cx="-10" cy="0" r="14" fill="currentColor" stroke="none"/>
+                <path d="M-20 -6 C-40 -18, -55 -10, -60 10" stroke-width="12"/>
+                <path d="M-20  6 C-40 18,  -55 10, -60 -10" stroke-width="12"/>
+                </g>
+
+                <!-- RIGHT ARM (grande) -->
+                <path d="M790 470
+                        C 840 460, 890 490, 915 540
+                        C 935 580, 930 625, 900 655"
+                    stroke-width="20"/>
+                <path d="M900 655
+                        C 865 690, 820 705, 780 690"
+                    stroke-width="20"/>
+
+                <!-- joints right -->
+                <circle cx="850" cy="500" r="20" fill="currentColor" stroke="none"/>
+                <circle cx="900" cy="655" r="18" fill="currentColor" stroke="none"/>
+
+                <!-- right claw -->
+                <g transform="translate(770 690)">
+                <circle cx="35" cy="0" r="16" fill="currentColor" stroke="none"/>
+                <path d="M55 -5 C80 -18, 95 -10, 100 10" stroke-width="14"/>
+                <path d="M55  5 C80 18,  95 10, 100 -10" stroke-width="14"/>
+                </g>
+
+            </g>
+            </svg>
+
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">OrbitHand</span>
+          <span class="brand-tag">Autonomous Orbital Maintenance</span>
+        </span>
+      </a>
+
+      <!-- Progressive enhancement: menu mobile sans JS via checkbox -->
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+      <label class="hamburger" for="nav-toggle">
+        <span class="sr-only">Ouvrir/fermer le menu</span>
+        <span aria-hidden="true" class="hamburger-lines"></span>
+      </label>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="product.html">Produit</a></li>
+          <li><a href="tools.html">Embouts</a></li>
+          <li><a href="#investir">Investir</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="#interet">Manifester votre intérêt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Présentation OrbitHand">
+      <div class="hero-media" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline poster="images/hero/robo.png">
+          <source src="images/placeholders/hero-orbithand.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow reveal">Robot autonome à 3 bras pour stations spatiales</p>
+        <h1 class="hero-title reveal">Révolutionner la maintenance spatiale</h1>
+        <p class="hero-subtitle reveal">
+          OrbitHand automatise l’inspection, la réparation et le nettoyage en environnement orbital — sans mobiliser une EVA humaine.
+          Conçu pour la continuité opérationnelle, la précision et la sécurité.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#interet">Manifester votre intérêt</a>
+          <a class="btn btn-ghost" href="product.html">Voir le produit</a>
+        </div>
+
+        <dl class="stats reveal" aria-label="Statistiques clés">
+          <div class="stat">
+            <dt>Préparation</dt>
+            <dd><span class="stat-strong">4h → 0h</span><span class="stat-muted">réactivité immédiate</span></dd>
+          </div>
+          <div class="stat">
+            <dt>Risque EVA</dt>
+            <dd><span class="stat-strong">−60%</span><span class="stat-muted">exposition réduite</span></dd>
+          </div>
+          <div class="stat">
+            <dt>Disponibilité</dt>
+            <dd><span class="stat-strong">24/7</span><span class="stat-muted">maintenance continue</span></dd>
+          </div>
+        </dl>
+
+        <p class="hero-note reveal">
+          Baseline : <strong>Révolutionner la maintenance spatiale</strong> — plus vite, plus sûr, plus souvent.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="probleme">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Le problème</h2>
+          <p>
+            Les sorties extravéhiculaires (EVA) sont dangereuses, coûteuses et lentes à déclencher.
+            Chaque minute à l’extérieur augmente l’exposition aux risques (radiation, micrométéorites, défaillance matériel, fatigue).
+          </p>
+        </header>
+
+        <div class="grid grid-3 reveal">
+          <article class="card">
+            <h3>Risque humain</h3>
+            <p>Dépressurisation, erreurs de manipulation, limitations biomécaniques en scaphandre, incertitudes opérationnelles.</p>
+          </article>
+          <article class="card">
+            <h3>Coût et immobilisation</h3>
+            <p>Planification, procédures, ressources sol, impact sur le planning de la station et des expériences scientifiques.</p>
+          </article>
+          <article class="card">
+            <h3>Lenteur de réaction</h3>
+            <p>Une anomalie “simple” peut attendre des jours — alors qu’un robot peut intervenir dès détection.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solution">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Notre solution</h2>
+          <p>
+            OrbitHand est un robot autonome à <strong>3 bras</strong> : deux bras dédiés à la mobilité et au maintien,
+            un bras pour l’interaction et l’outillage.
+          </p>
+        </header>
+
+        <div class="grid grid-3 reveal">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 15c3-2 4-6 5-10 2 4 2 7 0 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M3 19h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M17 15c-3-2-4-6-5-10-2 4-2 7 0 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Mobilité</h3>
+            <p>Deux bras s’ancrent, se relayent et stabilisent le corps, pour se déplacer sur la structure externe de la station.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M7 7h10M7 12h10M7 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Polyvalence</h3>
+            <p>Embouts interchangeables (imprimables en 3D) : inspection, nettoyage, serrage, manipulation, capteurs.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l8 4v6c0 6-4 9-8 10-4-1-8-4-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Sécurité</h3>
+            <p>Réduit l’exposition EVA en externalisant les tâches répétitives, urgentes ou à faible valeur scientifique.</p>
+          </article>
+        </div>
+
+        <div class="callout reveal">
+          <p class="callout-title">Objectif : une station “auto-maintenable”.</p>
+          <p class="callout-text">Détecter, diagnostiquer, intervenir — puis documenter l’opération en temps réel.</p>
+          <a class="btn btn-ghost" href="tools.html">Explorer les embouts 3D</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="avancement">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Avancement du projet</h2>
+          <p>
+            Nous communiquons sur un jalonnement clair et vérifiable.
+            Les jalons sont conçus pour réduire le risque technologique et accélérer l’industrialisation.
+          </p>
+        </header>
+
+        <ol class="timeline reveal" aria-label="Timeline du projet">
+          <li class="timeline-item is-done">
+            <h3>Conception</h3>
+            <p>Architecture 3 bras, cinématique, stratégie d’ancrage, première itération des embouts imprimables.</p>
+            <p class="timeline-meta">Terminé • Q4 2025</p>
+          </li>
+          <li class="timeline-item is-active">
+            <h3>Prototypage</h3>
+            <p>Prototype fonctionnel (mobilité + bras interactif), simulateur de station, capteurs et télémetrie.</p>
+            <p class="timeline-meta">En cours • Q1–Q2 2026</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Tests</h3>
+            <p>Campagnes en vide partiel/thermique, endurance, validation de précision, sécurité opérationnelle.</p>
+            <p class="timeline-meta">Prévu • 2026</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Déploiement</h3>
+            <p>Intégration sur maquette station, démonstration partenaire, pré-séries, préparation qualification.</p>
+            <p class="timeline-meta">Prévu • 2027</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="investir">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Investir</h2>
+          <p>
+            OrbitHand s’adresse aux opérateurs de stations, agences, intégrateurs, et industriels souhaitant réduire les EVA,
+            sécuriser la continuité de service, et standardiser des opérations de maintenance.
+          </p>
+        </header>
+
+        <div class="grid grid-2 reveal">
+          <article class="card">
+            <h3>Thèse</h3>
+            <p>
+              La maintenance orbitale passe d’un mode “intervention rare et risquée” à un mode “opération robotisée continue”.
+              OrbitHand devient une couche d’automatisation, comme un robot de ligne — mais dans l’espace.
+            </p>
+            <ul class="list">
+              <li>Réduction des EVA sur tâches répétitives.</li>
+              <li>Interventions plus rapides (anomalies, nettoyage, inspections).</li>
+              <li>Traçabilité (logs, images, métriques de couple/force/température).</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Ce que nous recherchons</h3>
+            <p>Partenariats techniques, accès à environnements de test, et financement pour accélérer la qualification.</p>
+            <form class="mini-form" action="#interet" method="get">
+              <button class="btn btn-primary" type="submit">Accéder au formulaire d’intérêt</button>
+            </form>
+            <p class="small muted">
+              (Précommandes : disponibles plus tard, une fois les conditions d’intégration et de certification clarifiées.)
+            </p>
+          </article>
+        </div>
+
+        <div class="logo-wall reveal" aria-label="Partenaires et investisseurs potentiels (placeholders)">
+          <img
+            src="https://placehold.co/220x72/png?text=NASA"
+            srcset="https://placehold.co/220x72/png?text=NASA 1x, https://placehold.co/440x144/png?text=NASA 2x"
+            width="220" height="72" alt="Logo NASA (placeholder)" loading="lazy" decoding="async" />
+          <img
+            src="https://placehold.co/220x72/png?text=ESA"
+            srcset="https://placehold.co/220x72/png?text=ESA 1x, https://placehold.co/440x144/png?text=ESA 2x"
+            width="220" height="72" alt="Logo ESA (placeholder)" loading="lazy" decoding="async" />
+          <img
+            src="https://placehold.co/220x72/png?text=SpaceX"
+            srcset="https://placehold.co/220x72/png?text=SpaceX 1x, https://placehold.co/440x144/png?text=SpaceX 2x"
+            width="220" height="72" alt="Logo SpaceX (placeholder)" loading="lazy" decoding="async" />
+          <img
+            src="https://placehold.co/220x72/png?text=Airbus+D%26S"
+            srcset="https://placehold.co/220x72/png?text=Airbus+D%26S 1x, https://placehold.co/440x144/png?text=Airbus+D%26S 2x"
+            width="220" height="72" alt="Logo Airbus Defence and Space (placeholder)" loading="lazy" decoding="async" />
+          <img
+            src="https://placehold.co/220x72/png?text=Blue+Origin"
+            srcset="https://placehold.co/220x72/png?text=Blue+Origin 1x, https://placehold.co/440x144/png?text=Blue+Origin 2x"
+            width="220" height="72" alt="Logo Blue Origin (placeholder)" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="interet">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Manifester votre intérêt</h2>
+          <p>
+            Dites-nous ce qui vous intéresse : démonstration, partenariat R&D, intégration station, ou investissement.
+            Réponse sous 48h ouvrées.
+          </p>
+        </header>
+
+        <form class="form reveal" action="#" method="post">
+          <!-- Backend future: remplacer action="#" par un endpoint PHP, ex: /api/lead.php -->
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="name">Nom complet</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email professionnel</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="org">Organisation</label>
+              <input id="org" name="organization" type="text" autocomplete="organization" />
+            </div>
+
+            <div class="field">
+              <label for="role">Rôle</label>
+              <input id="role" name="role" type="text" placeholder="Ex : R&D, Ops station, VC, Procurement…" />
+            </div>
+
+            <div class="field">
+              <label for="interest">Objet</label>
+              <select id="interest" name="interest">
+                <option value="demo">Demander une démonstration</option>
+                <option value="partnership">Partenariat technique</option>
+                <option value="investment">Investissement</option>
+                <option value="preorder">Précommande future</option>
+                <option value="press">Presse / média</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="timeline">Horizon</label>
+              <select id="timeline" name="timeline">
+                <option value="now">Immédiat (0–3 mois)</option>
+                <option value="mid">Cette année (3–12 mois)</option>
+                <option value="later">Exploration (12+ mois)</option>
+              </select>
+            </div>
+
+            <div class="field field-full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Contexte, besoins, contraintes, environnements de test, etc."></textarea>
+            </div>
+
+            <div class="field field-full">
+              <label class="checkbox">
+                <input type="checkbox" name="consent" required />
+                <span>J’accepte d’être recontacté au sujet d’OrbitHand (aucun spam, désinscription possible).</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+            <p class="small muted">Les formulaires sont prêts pour un backend PHP/BDD (à ajouter plus tard).</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Contact</h2>
+          <p>Pour un échange confidentiel (NDA), merci de préciser vos contraintes (station, EVA policy, enveloppe masse/puissance, interfaces).</p>
+        </header>
+
+        <div class="grid grid-2 reveal">
+          <article class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:contact@orbithand.space">contact@orbithand.space</a></p>
+            <p class="small muted">Remplacez cet email par votre domaine dès que prêt.</p>
+          </article>
+          <article class="card">
+            <h3>Localisation</h3>
+            <p>Pessac, Nouvelle-Aquitaine (FR) • Opérations internationales</p>
+            <p class="small muted">Visios, revues techniques et sessions investisseur possibles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="legal">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Informations légales</h2>
+          <p>Pages légales simples intégrées (évolutives vers des pages dédiées plus tard).</p>
+        </header>
+
+        <div class="grid grid-3 reveal">
+          <article class="card" id="mentions-legales">
+            <h3>Mentions légales</h3>
+            <p class="small">
+              Éditeur : OrbitHand (nom temporaire) • Adresse : à compléter • Directeur de publication : à compléter.
+              Hébergeur : à compléter.
+            </p>
+          </article>
+
+          <article class="card" id="confidentialite">
+            <h3>Confidentialité</h3>
+            <p class="small">
+              Nous collectons uniquement les données nécessaires au suivi du projet (email, organisation, message).
+              Aucune revente de données.
+            </p>
+          </article>
+
+          <article class="card" id="cgv">
+            <h3>CGV</h3>
+            <p class="small">
+              Les précommandes ne sont pas ouvertes pour le moment.
+              Les conditions commerciales seront publiées avant l’ouverture des réservations.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-title">OrbitHand</p>
+        <p class="small muted">Robot autonome à 3 bras pour la maintenance orbitale. Conçu pour la sécurité et la continuité.</p>
+      </div>
+
+      <div class="footer-links" aria-label="Liens">
+        <a href="index.html">Accueil</a>
+        <a href="product.html">Produit</a>
+        <a href="tools.html">Embouts</a>
+        <a href="#mentions-legales">Mentions légales</a>
+        <a href="#confidentialite">Confidentialité</a>
+        <a href="#cgv">CGV</a>
+      </div>
+
+      <div class="footer-newsletter">
+        <p class="footer-title">Suivre l’avancement</p>
+        <form class="newsletter" action="#" method="post">
+          <!-- Backend future: newsletter (double opt-in) -->
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input id="newsletter-email" name="newsletter_email" type="email" placeholder="Email" autocomplete="email" required />
+          <button class="btn btn-primary" type="submit">S’inscrire</button>
+        </form>
+        <p class="small muted">Une mise à jour par mois. Zéro bruit.</p>
+      </div>
+
+      <div class="footer-social" aria-label="Réseaux sociaux">
+        <a href="#" aria-label="LinkedIn (à renseigner)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 8.5V19.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6.5 5.5h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M10 19.5v-6.2c0-2.6 3.8-2.8 3.8 0v6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M13.8 13.3c0-2.7 4.2-3.1 4.2.3v5.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="X (Twitter) (à renseigner)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 18L18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8.2 6H18v9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube (à renseigner)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10 9.5l6 2.5-6 2.5v-5Z" fill="currentColor"/>
+            <path d="M21 12c0 6-1 7-9 7S3 18 3 12s1-7 9-7 9 1 9 7Z" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="small muted">© 2026 OrbitHand — Tous droits réservés.</p>
+      <p class="small muted">Version vitrine (HTML/CSS/JS) • Prête pour ajout PHP/BDD plus tard.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
